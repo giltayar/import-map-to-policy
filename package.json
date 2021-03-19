@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "serve src/",
-    "start:node": "node --experimental-policy=policy-map.json src/node-main.js",
+    "start:node": "node --experimental-policy=policy.json src/node-main.js",
     "build": "concurrently -r 'npm:build:*'",
     "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
     "test": "concurrently -r 'npm:test:*'",

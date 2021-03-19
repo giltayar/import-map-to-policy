@@ -1,44 +1,20 @@
 # import-map-to-policy
 
-A library that ???.
+Sample application is in `main.js`.
 
-This library is JSM-only (does not support `require`-ing it).
-
-## Installation
+## Setting up
 
 ```sh
-npm install @roundforest/import-map-to-policy
+npm ci
 ```
 
-## Basic use
+## Browser application with `importmap`
 
-???
+To try it out with the builtin `importmap`-s in Chrome, run `npm start` and navigate the browser
+to <http://localhost:5000/page>. It should show `42` in the page (you need to use at least Chrome 89).
 
-Example:
+## Node application with `policy.json`
 
-```js
-import {} from '@roundforest/import-map-to-policy'
-???
-```
+To try it out with the policy, run `npm run start:node`. You should see `42` output.
 
-## API
-
-### `???(???)`
-
-???
-
-Example:
-
-```js
-import {} from '@roundforest/import-map-to-policy'
-???
-```
-
-## Contributing
-
-See the documentation on contributing code to packages in this monorepo
-[here](../../CONTRIBUTING.md).
-
-### License
-
-MIT
+(currently doesn't work!)
