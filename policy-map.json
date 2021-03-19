@@ -1,0 +1,22 @@
+{
+  "resources": {
+    "./src/node-main.js": {
+      "integrity": true,
+      "dependencies": {
+        "write-answer": "./src/write-answer/write-answer.js"
+      }
+    },
+    "./src/write-answer/write-answer.js": {
+      "integrity": true,
+      "dependencies": {
+        "answer": "./src/answer/answer.js"
+      }
+    }
+  },
+  "scopes": {
+    "file:": {
+      "integrity": true,
+      "cascade": true
+    }
+  }
+}

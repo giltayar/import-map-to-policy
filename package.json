@@ -19,6 +19,8 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
+    "start": "serve src/",
+    "start:node": "node --experimental-policy=policy-map.json src/node-main.js",
     "build": "concurrently -r 'npm:build:*'",
     "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
     "test": "concurrently -r 'npm:test:*'",
@@ -65,6 +67,7 @@
   "dependencies": {
     "@types/jsdom": "^16.2.7",
     "jsdom": "^16.5.1",
+    "serve": "^11.3.2",
     "uuid": "^8.3.2"
   }
 }
