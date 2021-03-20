@@ -1,13 +1,14 @@
-import writeAnswer from 'write-answer'
-
-let text = ''
 const div = {
+  text: '',
   /**
    * @param {any} value
    */
   set textContent(value) {
-    text = value
+    this.text = value
   },
+  get textContent() {
+    return this.text
+  }
 }
 
 const document = {
@@ -18,6 +19,6 @@ const document = {
 // @ts-expect-error
 globalThis.document = document
 
-writeAnswer()
+await import('./main.js')
 
-console.log(text)
+console.log(div.text)

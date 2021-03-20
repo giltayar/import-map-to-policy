@@ -1,22 +1,32 @@
 {
   "resources": {
-    "./src/node-main.js": {
-      "integrity": true,
-      "dependencies": {
-        "write-answer": "./src/write-answer/write-answer.js"
-      }
-    },
-    "./src/write-answer/write-answer.js": {
-      "integrity": true,
-      "dependencies": {
-        "answer": "./src/answer/answer.js"
-      }
-    }
+
   },
   "scopes": {
     "file:": {
+      "integrity": true
+    },
+    "./":{
       "integrity": true,
-      "cascade": true
+      "cascade": true,
+      "dependencies": {
+        "write-answer": "./src/write-answer/write-answer.js",
+        "write-answer2/write-answer.js": "./src/write-answer/write-answer.js",
+        "answer": "./src/answer/answer.js",
+        "//": "the follo32wing rules are not needed in import maps!",
+        "./main.js": "./src/main.js",
+        "./relative-specifier.js": "./src/relative-specifier.js"
+      }
+    },
+    "./src/write-answer/": {
+      "integrity": true,
+      "cascade": true,
+      "dependencies": {
+        "write-answer": "./src/write-answer/write-answer.js",
+        "write-answer2/write-answer.js": "./src/write-answer/write-answer.js",
+        "answer": "./src/answer/answer.js",
+        "../relative-specifier.js": "./src/relative-specifier.js"
+      }
     }
   }
 }
