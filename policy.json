@@ -13,21 +13,12 @@
         "write-answer": "./src/write-answer/write-answer.js",
         "write-answer2/write-answer.js": "./src/write-answer/write-answer.js",
         "answer": "./src/answer/answer.js",
-        "//": "the follo32wing rules are not needed in import maps!",
-        "./main.js": "./src/main.js",
-        "./relative-specifier.js": "./src/relative-specifier.js",
-        "./relative-specifier2.js": "./src/relative-specifier.js"
-      }
-    },
-    "./src/write-answer/": {
-      "integrity": true,
-      "cascade": true,
-      "dependencies": {
-        "write-answer": "./src/write-answer/write-answer.js",
-        "write-answer2/write-answer.js": "./src/write-answer/write-answer.js",
-        "answer": "./src/answer/answer.js",
-        "../relative-specifier.js": "./src/relative-specifier.js",
-        "../relative-specifier2.js": "./src/relative-specifier.js"
+        "//1": "the following rules are not needed in import maps!",
+        "./src/main.js": "./src/main.js",
+        "./src/relative-specifier.js": "./src/relative-specifier.js",
+        "./src/relative-specifier2.js": "./src/relative-specifier.js",
+        "//2": "playing around with CJS too",
+        "./src/folder-with-index": "./src/folder-with-index"
       }
     }
   }

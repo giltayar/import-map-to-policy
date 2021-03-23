@@ -1,0 +1,1 @@
+require('./folder-with-index')
