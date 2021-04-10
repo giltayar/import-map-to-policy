@@ -4,6 +4,7 @@
   },
   "scopes": {
     "file:": {
+      "cascade": true,
       "integrity": true
     },
     "./":{

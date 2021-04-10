@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "./relative-src.mjs": "./relative-dst.mjs"
+  }
+}
