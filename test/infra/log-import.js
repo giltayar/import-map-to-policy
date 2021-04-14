@@ -6,7 +6,8 @@ globalThis.__log_imports = globalThis.__log_imports ?? []
  * @param {string} importMetaUrl
  */
 globalThis.logImport = function logImport(importMetaUrl) {
-  globalThis.__log_imports.push(new URL(importMetaUrl).pathname)
+  const url = new URL(importMetaUrl)
+  globalThis.__log_imports.push(url.pathname + url.search + url.hash)
 }
 
 globalThis.getLogImports = function getLogImports() {

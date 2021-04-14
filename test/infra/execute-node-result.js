@@ -14,13 +14,13 @@ const templateFileContent = await fs.readFile(path.join(__dirname, 'template.js'
 
 /**
  * @param {string} fixtureDirectory
- * @param {string} importFile
  * @param {string} entryFile
+ * @param {string} importFile
  */
 export async function executeNodeResult(
   fixtureDirectory,
-  importFile = 'importmap.json',
   entryFile = 'index.mjs',
+  importFile = 'importmap.json',
 ) {
   const absoluteFixtureDirectory = path.resolve(__dirname, '../fixtures', fixtureDirectory)
   const entryFileContent = await fs.readFile(path.join(absoluteFixtureDirectory, entryFile), 'utf8')
