@@ -1,5 +1,4 @@
 import {promises as fs} from 'fs'
-import os from 'os'
 import {execFile} from 'child_process'
 import path from 'path'
 import {fileURLToPath} from 'url'
@@ -54,15 +53,16 @@ export async function executeNodeResult(
     policyFile,
     finalEntryFile,
   )
-  const resultOutput = await promisify(execFile)(process.env.NODE_PATH ?? 'node', [
-    '--no-warnings',
-    '--experimental-policy',
-    policyFile,
-    finalEntryFile,
-  ])
+  const resultOutput = await promisify(execFile)(
+    process.env.NODE_PATH ?? 'node',
+    ['--no-warnings', '--experimental-policy', 'policy.json', entryFile],
+    {cwd: newDir},
+  )
 
   try {
-    return JSON.parse(resultOutput.stdout)
+    const imports = /**@type {string[]}*/ (JSON.parse(resultOutput.stdout))
+
+    return imports.map((i) => '/' + path.relative(newDir, i))
   } catch (error) {
     if (error instanceof SyntaxError) {
       return resultOutput.stdout + '\n' + resultOutput.stderr

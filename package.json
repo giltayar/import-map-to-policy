@@ -25,9 +25,9 @@
     "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
     "test": "concurrently -r 'npm:test:*'",
     "test:mocha-parallel": "npm run mocha -- --parallel",
-    "test:eslint": "eslint --color --max-warnings=0 '**/*.js'",
-    "test:typescript": "tsc --noEmit --emitDeclarationOnly false --pretty",
-    "mocha": "mocha --no-timeouts --exit --color 'test/*.test.js'"
+    "mocha": "mocha --no-timeouts --exit --color 'test/*.test.js'",
+    "eslint": "eslint --color --max-warnings=0 '**/*.js'",
+    "typescript": "tsc --noEmit --emitDeclarationOnly false --pretty"
   },
   "keywords": [
     "javascript",

@@ -11,7 +11,7 @@ import stream from 'stream/promises'
  * @returns {Promise<string>}
  */
 export async function copyFixtureDirectory(dirToCopy, stringSubstitutions) {
-  const ret = await fs.promises.mkdtemp(os.tmpdir() + '/')
+  const ret = await fs.promises.realpath(await fs.promises.mkdtemp(os.tmpdir() + '/'))
 
   if (dirToCopy != null) {
     await copyDirectory(dirToCopy, ret, stringSubstitutions)

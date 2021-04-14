@@ -18,3 +18,6 @@ to <http://localhost:5000/page>. It should show `42` in the page (you need to us
 To try it out with the policy, run `npm run start:node`. You should see `42` output.
 
 (currently doesn't work!)
+
+https://github.com/WICG/import-maps/tree/main/reference-implementation
+https://github.com/web-platform-tests/wpt/blob/master/import-maps/

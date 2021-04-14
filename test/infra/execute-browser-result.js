@@ -70,7 +70,6 @@ export async function executeBrowserResult(
   try {
     const page = await browser.newPage()
     try {
-      // await promisify(setTimeout)(10000000)
       await page.goto(baseUrl)
       return JSON.parse(
         (await page.evaluate(() => document.querySelector('#result')?.textContent)) ?? 'null',
