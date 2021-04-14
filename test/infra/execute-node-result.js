@@ -46,12 +46,14 @@ export async function executeNodeResult(
     ),
   )
   console.log(
-    'trying with this command:',
+    'trying with this command: cd',
+    newDir,
+    '&&',
     process.env.NODE_PATH ?? 'node',
     '--no-warnings',
     '--experimental-policy',
-    policyFile,
-    finalEntryFile,
+    'policy.json',
+    entryFile,
   )
   const resultOutput = await promisify(execFile)(
     process.env.NODE_PATH ?? 'node',
