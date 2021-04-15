@@ -19,5 +19,7 @@ To try it out with the policy, run `npm run start:node`. You should see `42` out
 
 (currently doesn't work!)
 
+https://wicg.github.io/import-maps/
+https://github.com/WICG/import-maps
 https://github.com/WICG/import-maps/tree/main/reference-implementation
 https://github.com/web-platform-tests/wpt/blob/master/import-maps/

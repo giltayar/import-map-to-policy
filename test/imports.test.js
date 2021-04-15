@@ -16,9 +16,9 @@ describe('"imports" section in import map', function () {
     /**@type {[string, string, string]} */
     const test = ['imports-1', 'index.mjs', 'importmap.json']
 
-    const nodeResult = await executeNodeResult(...test)
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
 
     expect(nodeResult).to.eql(browserResult)
   })
@@ -27,9 +27,9 @@ describe('"imports" section in import map', function () {
     /**@type {[string, string, string]} */
     const test = ['imports-1', 'queryparams.mjs', 'queryparams.importmap.json']
 
-    const nodeResult = await executeNodeResult(...test)
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
 
     expect(nodeResult).to.eql(browserResult)
   })
@@ -41,9 +41,9 @@ describe('"imports" section in import map', function () {
     /**@type {[string, string, string]} */
     const test = ['imports-1', 'queryparams.mjs', 'importmap.json']
 
-    const nodeResult = await executeNodeResult(...test)
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
 
     expect(nodeResult).to.eql(browserResult)
   })
@@ -52,9 +52,9 @@ describe('"imports" section in import map', function () {
     /**@type {[string, string, string]} */
     const test = ['imports-1', 'hash.mjs', 'hash.importmap.json']
 
-    const nodeResult = await executeNodeResult(...test)
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
 
     expect(nodeResult).to.eql(browserResult)
   })
@@ -66,10 +66,23 @@ describe('"imports" section in import map', function () {
     /**@type {[string, string, string]} */
     const test = ['imports-1', 'hash.mjs', 'importmap.json']
 
-    const nodeResult = await executeNodeResult(...test)
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
+
+    expect(nodeResult).to.eql(browserResult)
+  })
+
+  it('import relative specifier when import map has a slash-ending wildcard', async () => {
+    /**@type {[string, string, string]} */
+    const test = ['imports-1', 'index.mjs', 'slash-ending.importmap.json']
+
+    // showHtmlPage()
+    const browserResult = await executeBrowserResult(...test)
+    console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
 
     expect(nodeResult).to.eql(browserResult)
   })
 })
+
