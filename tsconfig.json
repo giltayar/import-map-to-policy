@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["es2020", "DOM"],
-    "target": "ES2020",
+    "lib": ["esnext", "DOM"],
+    "target": "esnext",
     "moduleResolution": "node",
     "module": "esnext",
     "strict": true,
@@ -18,6 +18,6 @@
     "maxNodeModuleJsDepth": 0,
     "skipLibCheck": true,
   },
-  "include": ["play-around/**/*.js", "play-around/**/*.d.ts", "test/**/*.js", "test/**/*.d.ts", "play-around/node-main.cjs", "play-around/folder-with-index/index.cjs", "test/fixtures/imports-1/index.mjs", "test/fixtures/imports-1/relative-dst.mjs"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.js", "test/**/*.js"],
+  "exclude": ["node_modules", "test/infra/template.js"]
 }
