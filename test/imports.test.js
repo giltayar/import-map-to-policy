@@ -9,7 +9,7 @@ describe('"imports" section in import map', function () {
 
   it('import relative specifier', async () => {
     /**@type {[string, string, string]} */
-    const test = ['imports-1', 'index.mjs', 'importmap.json']
+    const test = ['relative-specifier', 'index.mjs', 'importmap.json']
 
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
@@ -20,21 +20,7 @@ describe('"imports" section in import map', function () {
 
   it('import relative specifier with query parameters', async () => {
     /**@type {[string, string, string]} */
-    const test = ['imports-1', 'queryparams.mjs', 'queryparams.importmap.json']
-
-    const browserResult = await executeBrowserResult(...test)
-    console.log(browserResult)
-    const nodeResult = await executeNodeResult(...test)
-
-    expect(nodeResult).to.eql(browserResult)
-  })
-
-  /*
-   * This does not work in Node && the browser
-   */
-  it.skip('import relative specifier with query but no query in importmap', async () => {
-    /**@type {[string, string, string]} */
-    const test = ['imports-1', 'queryparams.mjs', 'importmap.json']
+    const test = ['relative-specifier', 'queryparams.mjs', 'queryparams.importmap.json']
 
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
@@ -45,21 +31,7 @@ describe('"imports" section in import map', function () {
 
   it('import relative specifier with hash', async () => {
     /**@type {[string, string, string]} */
-    const test = ['imports-1', 'hash.mjs', 'hash.importmap.json']
-
-    const browserResult = await executeBrowserResult(...test)
-    console.log(browserResult)
-    const nodeResult = await executeNodeResult(...test)
-
-    expect(nodeResult).to.eql(browserResult)
-  })
-
-  /*
-   * This does not work in Node && the browser
-   */
-  it.skip('import relative specifier with hash but no hash in importmap', async () => {
-    /**@type {[string, string, string]} */
-    const test = ['imports-1', 'hash.mjs', 'importmap.json']
+    const test = ['relative-specifier', 'hash.mjs', 'hash.importmap.json']
 
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
@@ -73,12 +45,25 @@ describe('"imports" section in import map', function () {
    */
   it.skip('import relative specifier when import map has a slash-ending wildcard', async () => {
     /**@type {[string, string, string]} */
-    const test = ['imports-1', 'index.mjs', 'slash-ending.importmap.json']
+    const test = ['relative-specifier', 'index.mjs', 'slash-ending.importmap.json']
 
     // showHtmlPage()
     const browserResult = await executeBrowserResult(...test)
     console.log(browserResult)
     const nodeResult = await executeNodeResult(...test)
+
+    expect(nodeResult).to.eql(browserResult)
+  })
+
+  it.skip('import bare specifiers', async () => {
+    /**@type {[string, string, string]} */
+    const test = ['bare', 'index.mjs', 'importmap.json']
+
+    // showHtmlPage()
+    const browserResult = await executeBrowserResult(...test)
+    console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
+    console.log(nodeResult)
 
     expect(nodeResult).to.eql(browserResult)
   })

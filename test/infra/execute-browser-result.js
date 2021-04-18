@@ -5,6 +5,7 @@ import puppeteer from 'puppeteer'
 import {fileURLToPath} from 'url'
 import {promisify} from 'util'
 import {execFile} from 'child_process'
+import retry from 'p-retry'
 import {copyFixtureDirectory} from './copy-fixture.js'
 
 // @ts-expect-error
@@ -71,8 +72,13 @@ export async function executeBrowserResult(
     const page = await browser.newPage()
     try {
       await page.goto(entryUrl)
-      return JSON.parse(
-        (await page.evaluate(() => document.querySelector('#result')?.textContent)) ?? 'null',
+      return await retry(
+        async () => {
+          const result = await page.evaluate(() => document.querySelector('#result')?.textContent)
+          if (!result) throw new Error('result is empty')
+          return JSON.parse(result)
+        },
+        {minTimeout: 250, maxTimeout: 250, retries: 10},
       )
     } finally {
       await page.close()

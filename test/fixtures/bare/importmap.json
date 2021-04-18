@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "bare": "./relative-dst.mjs?d=bare",
+    "bare/bare": "./relative-dst.mjs?d=bare/bare",
+    "bare/to-data": "data:text/javascript,globalThis.logImport(import.meta.url)"
+  }
+}

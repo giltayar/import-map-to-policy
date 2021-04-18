@@ -11,6 +11,10 @@ export function importMapObjectToPolicyObject(importMap) {
         cascade: true,
         integrity: true,
       },
+      'data:': {
+        cascade: true,
+        integrity: true,
+      },
       './': {
         integrity: true,
         cascade: true,
