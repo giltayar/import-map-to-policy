@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "data:text/javascript,log('data:foo')": "./relative-dst.mjs?d=data",
+    "data:text/javascript,log('data:to-data')": "./relative-dst.mjs?d=data-to-data"
+  }
+}

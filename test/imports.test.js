@@ -67,4 +67,17 @@ describe('"imports" section in import map', function () {
 
     expect(nodeResult).to.eql(browserResult)
   })
+
+  it('data url specifiers', async () => {
+    /**@type {[string, string, string]} */
+    const test = ['data-url', 'index.mjs', 'importmap.json']
+
+    // showHtmlPage()
+    const browserResult = await executeBrowserResult(...test)
+    console.log(browserResult)
+    const nodeResult = await executeNodeResult(...test)
+    console.log(nodeResult)
+
+    expect(nodeResult).to.eql(browserResult)
+  })
 })
